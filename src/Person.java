@@ -35,6 +35,16 @@ public class Person implements Comparable{
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Person) {
+            Person p = (Person) obj;
+            if (_name.equals(p._name) && _id.equals(p._id) && _height==p._height) return true;
+            else return false;
+        }
+        else return false;
+    }
+
+    @Override
     public String toString() {
         return String.format("Name:%s, ID:%s, Height:%d", _name,_id, _height);
     }
